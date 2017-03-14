@@ -14,4 +14,11 @@ package object util {
       a
     }
   }
+
+  implicit class TapEach[A <: Iterable[B], B](a: A) {
+    def tapEach(fn: B => Unit): A = {
+      a.foreach(fn)
+      a
+    }
+  }
 }
