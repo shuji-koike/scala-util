@@ -10,7 +10,7 @@ package object util {
   }
 
   implicit class Tap[A](a: A) {
-    def tap(fn: A => Unit): A = {
+    def tap(fn: A => Any): A = {
       fn(a)
       a
     }
