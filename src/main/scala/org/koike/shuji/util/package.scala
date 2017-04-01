@@ -1,5 +1,8 @@
 package org.koike.shuji
 
+import scala.concurrent.duration.Duration
+import scala.concurrent.{Await, Future}
+
 
 package object util {
   implicit class PrettyPrint[A](a: A) {
@@ -13,6 +16,12 @@ package object util {
     def tap(fn: A => Any): A = {
       fn(a)
       a
+    }
+  }
+
+  implicit class AwaitFuture[A](future: Future[A]) {
+    def await: A = {
+      Await.result(future, Duration.Inf)
     }
   }
 }
