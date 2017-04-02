@@ -20,8 +20,8 @@ package object util {
   }
 
   implicit class AwaitFuture[A](future: Future[A]) {
-    def await: A = {
-      Await.result(future, Duration.Inf)
+    def await(duration: Duration = Duration.Inf): A = {
+      Await.result(future, duration)
     }
   }
 }
