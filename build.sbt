@@ -1,5 +1,5 @@
 name := "scala-util"
-version := "1.0-SNAPSHOT"
+version := "1.0.0"
 scalaVersion := "2.12.4"
 crossScalaVersions := Seq("2.12.4", "2.11.12", "2.10.7")
 
